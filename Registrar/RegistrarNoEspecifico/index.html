@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Uso</title>
+    <link rel="stylesheet" href="../../vscode/bootstrap-5.3.8-dist/css/bootstrap.min.css">
+    <link rel="icon" href="../../.vscode/favicon_ADMIN/favicon.ico" type="image/ico">
+</head>
+<body class="d-flex justify-content-center align-items-center vh-100 bg-light">
+
+    <div class="w-100 p-3" style="max-width: 750px;">
+        
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <div>
+                <h1 class="h2 mb-1">Ingresa datos generales</h1>
+                <p class="text-muted mb-0">Complete los campos para registrar datos descriptivos.</p>
+            </div>
+        </div>
+
+        <section class="card p-4 shadow-sm">
+            <form id="formRegistro" method="post">
+                
+                <div class="row g-3 mb-3">
+                    <div class="col-md-5">
+                        <label for="fecha" class="form-label">Fecha</label>
+                        <input type="date" id="fecha" name="fecha" class="form-control" required oninvalid="this.setCustomValidity('Ingrese la fecha.')" oninput="this.setCustomValidity('')">
+                    </div>
+                    <div class="col-md-7">
+                        <label for="Encargado" class="form-label">Encargado/a</label>
+                        <input type="text" id="Encargado" name="Encargado" class="form-control" required oninvalid="this.setCustomValidity('Ingrese el nombre del encargado/a.')" oninput="this.setCustomValidity('')">
+                    </div>
+                </div>
+
+                <div class="row g-3 mb-3">
+                    <div class="col-md-6" id="Proceso">
+                        <label for="Proceso" class="form-label">Proceso</label>
+                        <input type="text" id="Proceso" name="Proceso" class="form-control" required oninvalid="this.setCustomValidity('Ingrese el proceso.')" oninput="this.setCustomValidity('')">
+                    </div>
+                    <div class="col-md-6" id="ZonaLugar">
+                        <label class="form-label">Zona/Lugar</label>
+                        <input type="text" id="ZonaLugar" name="ZonaLugar" class="form-control" required oninvalid="this.setCustomValidity('Ingrese la zona o lugar.')" oninput="this.setCustomValidity('')">
+                    </div>
+                </div>
+
+                <div class="row g-3 mb-3" id="Actividades">
+                    <div class="col-md-6" id="Actividades">
+                        <label for="Actividades" class="form-label">Actividades</label>
+                        <input type="text" id="Actividades" name="Actividades" class="form-control" required oninvalid="this.setCustomValidity('Ingrese las actividades realizadas.')" oninput="this.setCustomValidity('')">
+                    </div>
+                    
+                    <div class="col-md-6" id="Tareas">
+                        <label for="inputTareas" class="form-label">Tareas</label>
+                        <input type="text" id="inputTareas" name="Tareas" class="form-control" required oninvalid="this.setCustomValidity('Ingrese las tareas.')" oninput="this.setCustomValidity('')">
+                    </div>
+                </div>
+
+                
+                <div class="d-flex justify-content-end gap-2">
+                    <button id="Registrar" type="submit" class="btn btn-success px-4">Continuar</button>
+                </div>
+
+            </form>
+        </section>
+
+    </div>
+
+    <script src="Inicio.js"></script>
+</body>
+</html>

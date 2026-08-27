@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Registrar Incidencia</title>
+
+    <link rel="stylesheet" href="../../vscode/bootstrap-5.3.8-dist/css/bootstrap.min.css">
+    <link rel="icon" href="../../.vscode/favicon_ADMIN/favicon.ico" type="image/ico">
+</head>
+
+<body class="d-flex justify-content-center align-items-center min-vh-100 bg-light">
+
+    <div class="w-100 p-3" style="max-width: 600px;">
+
+        <div class="text-center mb-4">
+            <h1 class="h2 mb-1">Registrar Peligro</h1>
+            <p class="text-muted">
+                Reporte Peligros
+            </p>
+        </div>
+
+        <section class="card p-4 shadow-sm">
+
+            <form method="post" id="incidenciaForm">
+
+                <!-- TIPO DE TAREA -->
+                <div class="mb-3">
+
+                    <label for="Tipo" class="form-label fw-bold">
+                        Tipo de Tarea
+                    </label>
+
+                    <select
+                        name="Tipo"
+                        id="Tipo"
+                        class="form-select"
+                        required
+                    >
+                        <option value="">Seleccione una opción...</option>
+                        <option value="Rutinario">Rutinario</option>
+                        <option value="NoRutinario">No Rutinario</option>
+                    </select>
+
+                </div>
+
+
+                <!-- TIPO DE PELIGRO -->
+                <div class="mb-3">
+
+                    <label for="tipo" class="form-label fw-bold">
+                        Tipo
+                    </label>
+
+                    <select
+                        id="tipo"
+                        name="tipo"
+                        class="form-select"
+                        required
+                    >
+                        <option value="">Seleccione un tipo...</option>
+
+                        <option value="mecanico">
+                            Mecánico
+                        </option>
+
+                        <option value="electrico">
+                            Eléctrico
+                        </option>
+
+                        <option value="fuego">
+                            Fuego y Explosión
+                        </option>
+
+                        <option value="quimicos">
+                            Químicos
+                        </option>
+
+                        <option value="fisicos">
+                            Físicos
+                        </option>
+
+                        <option value="biologicos">
+                            Biológicos
+                        </option>
+
+                        <option value="fisiologicos">
+                            Fisiológicos
+                        </option>
+
+                        <option value="biomecanicos">
+                            Biomecánicos (Ergonómicos)
+                        </option>
+
+                        <option value="psicosociales">
+                            Mentales y/o Psicosociales
+                        </option>
+
+                        <option value="naturales">
+                            Fenómenos Naturales
+                        </option>
+
+                        <option value="locativos">
+                            Locativos
+                        </option>
+
+                        <option value="ambientales">
+                            Impactos Ambientales
+                        </option>
+
+                        <option value="publicos">
+                            Públicos Otros
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- PELIGRO -->
+                <div class="mb-3">
+
+                    <label for="peligro" class="form-label fw-bold">
+                        Peligro
+                    </label>
+
+                    <select
+                        id="peligro"
+                        name="peligro"
+                        class="form-select"
+                        disabled
+                        required
+                    >
+                        <option value="">
+                            Seleccione primero un tipo
+                        </option>
+                    </select>
+
+                </div>
+
+
+                <!-- ALUMNO / RESPONSABLE -->
+                <div class="mb-3">
+
+                    <label for="PeligroDescManual" class="form-label">
+                        Descripción del Peligro
+                    </label>
+
+                    <input
+                        type="text"
+                        id="PeligroDescManual"
+                        name="PeligroDescManual"
+                        class="form-control"
+                        placeholder="Describe el Peligro"
+                        required
+                    >
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label for="EfectosPosibles" class="form-label">
+                        Efectos Posibles
+                    </label>
+
+                    <input
+                        type="text"
+                        id="EfectosPosibles"
+                        name="EfectosPosibles"
+                        class="form-control"
+                        placeholder="Describe los efectos posibles"
+                        required
+                    >
+
+                </div>
+                <h2 class="h4 mb-3 mt-4 fw-bold text-dark">Controles Existentes</h2>
+
+
+                <div class="mb-3" ><label for="Fuente" class="form-label">
+                        Fuente
+                    </label>
+
+                    <input
+                        type="text"
+                        id="Fuente"
+                        name="Fuente"
+                        class="form-control"
+                        placeholder="Ingresa la fuente del peligro"
+                        required
+                    ></div>
+                <div class="mb-3" > <label for="Medio" class="form-label">
+                        Medio
+                    </label>
+
+                    <input
+                        type="text"
+                        id="Medio"
+                        name="Medio"
+                        class="form-control"
+                        placeholder="Ingresa el medio"
+                        required
+                    ></div>
+                <div class="mb-3" ><label for="Individuo" class="form-label">
+                        Individuo
+                    </label>
+
+                    <input
+                        type="text"
+                        id="Individuo"
+                        name="Individuo"
+                        class="form-control"
+                        placeholder="Ingresa individuo"
+                        required
+                    >
+                </div>
+                <h2 class="h4 mb-3 mt-4 fw-bold text-dark">Evaluación de Riesgo</h2>
+                 
+                <div class="mb-3" >
+                    <label for="NivelDeDeficiencia">Nivel de Deficiencia</label>
+                    <select id="NivelDeDeficiencia" name="NivelDeDeficiencia" class="form-select" required>
+                        <option value="">Seleccione un nivel...</option>
+                        <option value="2">2</option>
+                        <option value="6">6</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+
+                <div class="mb-3" >
+                    <label for="NivelDeExposicion">Nivel de Exposición</label>
+                    <input type="number" name="NivelDeExposicion" id="NivelDeExposicion" class="form-control" placeholder="Ingresa el nivel de exposición (Solo Numeros)" required>
+                </div>
+
+                <div class="mb-3" >
+                    <label for="NivelDeProbabilidad" hidden>Nivel de Probabilidad</label>
+                    <input type="text" name="NivelDeProbabilidad" id="NivelDeProbabilidad" class="form-control"  disabled hidden>
+                </div>
+
+                <div class="mb-3" >
+                    <label for="InterpretacionNivelDeProbabilidad" hidden>Interpretación del Nivel de Probabilidad</label>
+                    <input type="text" name="InterpretacionNivelDeProbabilidad" id="InterpretacionNivelDeProbabilidad" class="form-control"  disabled hidden>
+                </div>
+                
+                <div class="mb-3" >
+                    <label for="NivelDeConsecuencia">Nivel de Consecuencia</label>
+                    <select id="NivelDeConsecuencia" name="NivelDeConsecuencia" class="form-select" required>
+                        <option value="">Seleccione un nivel...</option>
+                        <option value="10">10</option>
+                        <option value="25">25</option>
+                        <option value="60">60</option>
+                        <option value="100">100</option>
+                    </select>
+                </div>
+
+                <div class="mb-3" >
+                    <label for="NivelDeRiesgo" hidden>Nivel de Riesgo</label>
+                    <input type="text" id="NivelDeRiesgo" name="NivelDeRiesgo" class="form-control" disabled hidden>
+                </div>
+
+                <div class="mb-3" >
+                    <label for="AceptabilidadDelRiesgo" hidden>Aceptabilidad del Riesgo</label>
+                    <input type="text" id="AceptabilidadDelRiesgo" name="AceptabilidadDelRiesgo" class="form-control" disabled hidden>
+                </div>
+
+                <h2 class="h4 mb-3 mt-4 fw-bold text-dark">Medidas de Intervencion</h2>
+
+                 <div class="mb-3" > 
+                    <label for="Eliminacion" class="form-label"> Eliminacion</label>
+                    <input  type="text"id="Eliminacion"name="Eliminacion"class="form-control"placeholder="Ingresa la eliminación" required>
+                </div>
+
+                <div class="mb-3" > 
+                    <label for="Sustitucion" class="form-label"> Sustitucion</label>
+                    <input  type="text"id="Sustitucion"name="Sustitucion"class="form-control"placeholder="Ingresa la sustitución" required >
+                </div>
+                <div class="mb-3" > 
+                    <label for="ControlesDeIngenieria" class="form-label"> Controles de Ingenieria</label>
+                    <input  type="text"id="ControlesDeIngenieria"name="ControlesDeIngenieria"class="form-control"placeholder="Ingresa los controles de ingeniería" required>
+                </div>
+
+                <div class="mb-3" > 
+                    <label for="ControlesAdministrativos" class="form-label"> Controles Administrativos, Señalizacion, Advertencia</label>
+                    <input  type="text"id="ControlesAdministrativos"name="ControlesAdministrativos"class="form-control"placeholder="Ingresa los controles administrativos" required>
+                </div>
+
+                <div class="mb-3" > 
+                    <label for="Equipos" class="form-label">Equipos / Elementos de Proteccion (EPP)</label>
+                    <input  type="text"id="Equipos"name="Equipos"class="form-control"placeholder="Ingresa los datos" required>
+                </div>
+
+                     
+
+                
+
+                <!-- DESCRIPCIÓN DE OTRO -->
+                <div
+                    id="Descripcion"
+                    class="mb-4"
+                >
+                </div>
+
+
+                <!-- BOTÓN -->
+                <div class="d-flex justify-content-end">
+
+                    <button
+                        type="submit"
+                        id="Registrar"
+                        class="btn btn-primary px-4"
+                    >
+                        Registrar Peligro
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+        <section class="mt-4" aria-labelledby="registrosTitulo">
+
+            <h2 id="registrosTitulo" class="h4 mb-3">Registros preparados para Excel</h2>
+
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped table-sm align-middle">
+                    <thead id="registrosEncabezado"></thead>
+                    <tbody id="registrosCuerpo">
+                        <tr>
+                            <td class="text-muted">No hay registros para mostrar.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <!-- MODAL DE ÉXITO -->
+    <div
+        class="modal fade"
+        id="modalExito"
+        tabindex="-1"
+        aria-hidden="true"
+        data-bs-backdrop="static"
+    >
+
+        <div class="modal-dialog modal-dialog-centered">
+
+            <div class="modal-content p-2">
+
+                <div class="modal-header border-0 pb-0">
+
+                    <h5 class="modal-title fw-bold text-success">
+                        ¡Registro Exitoso!
+                    </h5>
+
+                </div>
+
+                <div class="modal-body">
+
+                    <p class="mb-1">
+                        El reporte ha sido guardado correctamente.
+                    </p>
+
+                    <p class="text-muted mb-0">
+                        ¿Desea registrar otro peligro?
+                    </p>    
+
+                </div>
+
+                <div class="modal-footer border-0 d-flex justify-content-end gap-2 pt-3">
+
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        id="closePopup"
+                    >
+                        Terminar
+                    </button>
+
+                    <button
+                        type="button"
+                        class="btn btn-success"
+                        id="registrarOtra"
+                    >
+                        Registrar otro
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- BOOTSTRAP -->
+    <script src="../../vscode/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- JAVASCRIPT -->
+    <script src="Transformacion.js"></script>
+
+</body>
+</html>
